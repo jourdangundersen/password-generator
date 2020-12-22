@@ -1,6 +1,21 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var resetBtn = document.querySelector("startover");
+var lowercaseChar = "abcdefghijklmnopqrstuvwxyz".split("");
+var uppercaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+var numberChar = "0123456789".split("");
+var specialChar = "!@#$%^&*.-_=+?,.;:/~".split("");
+var getNum = "";
 
+function getNumber() {
+  getNum = prompt("How many characters would you like your password to be?  Passwords must be between 8 and 128 characters.")
+  getNum = Number(getNum)
+
+  if ((getNum < 8) || (getNum > 128)) {
+    alert("Passwords must be between 8 and 128 characters");
+    getNumber();
+  }
+};
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
