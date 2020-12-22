@@ -38,8 +38,24 @@ function generatePassword() {
   if (useUpper === true) {
     totalArray = totalArray.concat(uppercaseChar)
   };
-}
-// Write password to the #password input
+  if (useNumber === true) {
+    totalArray = totalArray.concat(numberChar)
+  };
+  if (useSpecial === true) {
+    totalArray = totalArray.concat(specialChar)
+  };
+
+  for (var i = 0; i < getNum; i++) {
+    var count = totalArray.length;
+    var randomize = Math.floor(Math.random() * count);
+    passwordArray.push(totalArray[randomize]);
+  }
+
+  passwordString = passwordArray.join("")
+
+  return passwordString
+};
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -48,5 +64,4 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
