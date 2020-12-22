@@ -16,6 +16,29 @@ function getNumber() {
     getNumber();
   }
 };
+
+function generatePassword() {
+  var totalArray = [];
+  var passwordArray = [];
+  var passwordString = "";
+
+  getNumber()
+  
+  var useLower = confirm("Would you like your password to contain lowercase letters?");
+  var useUpper = confirm("Would you like your password to contain uppercase letters?");
+  var useNumber = confirm("Would you like your password to contain numbers?");
+  var useSpecial = confirm("Would you like your password to contain special characters?");
+
+  if ((useLower === false) && (useUpper === false) && (useNumber === false) && (useSpecial === false)) {
+    alert("Your password does not have any characters to choose from.")
+  }
+  if (userLower === true) {
+    totalArray = totalArray.concat(lowercaseChar)
+  };
+  if (useUpper === true) {
+    totalArray = totalArray.concat(uppercaseChar)
+  };
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
