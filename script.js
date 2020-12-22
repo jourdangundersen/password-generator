@@ -11,22 +11,22 @@ var getNum = "";
 // Asks for # of characters desired from user
 
 function getNumber() {
-  getNum = prompt("How many characters would you like your password to be?  Passwords must be between 8 and 128 characters.")
-  getNum = Number(getNum)
+  getNum = prompt("How many characters would you like your password to be?  Passwords must be between 8 and 128 characters.");
+  getNum = Number(getNum);
 
   // Alert if # of characters is not within given range
   if ((getNum < 8) || (getNum > 128)) {
     alert("Passwords must be between 8 and 128 characters");
     getNumber();
   }
-};
+}
 
 function generatePassword() {
   var totalArray = [];
   var passwordArray = [];
   var passwordString = "";
 
-  getNumber()
+  getNumber();
   
   // User input for desired characters included in password
 
@@ -37,21 +37,21 @@ function generatePassword() {
 
   // Alert if user inputs false on all options
   if ((useLower === false) && (useUpper === false) && (useNumber === false) && (useSpecial === false)) {
-    alert("Your password does not have any characters to choose from.")
+    alert("Your password does not have any characters to choose from.");
   }
   // Adds desired characters from arrays to the overall array
-  if (userLower === true) {
-    totalArray = totalArray.concat(lowercaseChar)
-  };
+  if (useLower === true) {
+    totalArray = totalArray.concat(lowercaseChar);
+  }
   if (useUpper === true) {
-    totalArray = totalArray.concat(uppercaseChar)
-  };
+    totalArray = totalArray.concat(uppercaseChar);
+  }
   if (useNumber === true) {
-    totalArray = totalArray.concat(numberChar)
-  };
+    totalArray = totalArray.concat(numberChar);
+  }
   if (useSpecial === true) {
-    totalArray = totalArray.concat(specialChar)
-  };
+    totalArray = totalArray.concat(specialChar);
+  }
 
   for (var i = 0; i < getNum; i++) {
     var count = totalArray.length;
@@ -59,10 +59,10 @@ function generatePassword() {
     passwordArray.push(totalArray[randomize]);
   }
 
-  passwordString = passwordArray.join("")
+  passwordString = passwordArray.join("");
 
-  return passwordString
-};
+  return passwordString;
+}
 
 function writePassword() {
   var password = generatePassword();
